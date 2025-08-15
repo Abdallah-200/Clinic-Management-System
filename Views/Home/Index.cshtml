@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<form asp-controller="Account" asp-action="Logout" method="post" class="form-inline">
+    <button type="submit" class="btn btn-danger">Logout</button>
+</form>
+
+<h2 class="mb-4">Dashboard</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header"><a asp-controller="Doctor" asp-action="Index">Doctors</a></div>
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag.Doctors</h5>
+                <p class="card-text">Total number of doctors in the system.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header"><a asp-controller="Patient" asp-action="Index">Patients</a></div>
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag.Patients</h5>
+                <p class="card-text">Total number of patients registered.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-header"><a asp-controller="Appointment" asp-action="Index">Appointments</a></div>
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag.Appointments</h5>
+                <p class="card-text">Scheduled appointments in the system.</p>
+            </div>
+        </div>
+    </div>
+</div>

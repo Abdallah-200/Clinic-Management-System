@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Patient>
+
+<h2>Patients</h2>
+
+<a class="btn btn-success" asp-controller="Patient" asp-action="Create">Add New Patient</a>
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Phone</th>
+        <th>Gender</th>
+        <th>MedicalHistory</th>
+        <th>Appointments</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Name</td>
+            <td>@p.Age</td>         
+            <td>@p.PhoneNumber</td>
+            <td>@p.Gender</td>
+            <td>@p.MedicalHistory</td>
+            <td>@p.Appointments</td>
+            <td>
+                <a href="/Patient/Edit/@p.Id" class="btn btn-warning btn-sm">Edit</a>
+                <a href="/Patient/Delete/@p.Id" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
